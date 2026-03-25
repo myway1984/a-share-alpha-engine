@@ -1,0 +1,135 @@
+{
+  "start_date": "2024-09-01",
+  "end_date": "2026-03-20",
+  "train_months": 6,
+  "test_months": 3,
+  "step_months": 3,
+  "aggregate_test_metrics": {
+    "start_nav": 1.0,
+    "end_nav": 1.2425,
+    "total_return": 0.242495,
+    "max_drawdown": 0.003492,
+    "avg_turnover": 0.057438,
+    "positive_month_ratio": 0.75,
+    "score": 0.199835,
+    "trade_days": 241
+  },
+  "windows": [
+    {
+      "train_start": "2024-09-01",
+      "train_end": "2025-02-28",
+      "test_start": "2025-03-01",
+      "test_end": "2025-05-31",
+      "best_candidate": {
+        "top_n": 15,
+        "buffer_rank": 25,
+        "rebalance_interval_trade_days": 5,
+        "min_holding_trade_days": 10,
+        "max_new_positions_per_rebalance": 2
+      },
+      "train_metrics": {
+        "total_return": 0.502862,
+        "max_drawdown": 0.158325,
+        "avg_turnover": 0.059195,
+        "positive_month_ratio": 0.833333,
+        "score": 0.269768,
+        "trade_days": 116
+      },
+      "test_metrics": {
+        "total_return": 0.017274,
+        "max_drawdown": 0.155353,
+        "avg_turnover": 0.064481,
+        "positive_month_ratio": 0.666667,
+        "score": 0.050632,
+        "trade_days": 61
+      }
+    },
+    {
+      "train_start": "2024-12-01",
+      "train_end": "2025-05-31",
+      "test_start": "2025-06-01",
+      "test_end": "2025-08-31",
+      "best_candidate": {
+        "top_n": 18,
+        "buffer_rank": 25,
+        "rebalance_interval_trade_days": 10,
+        "min_holding_trade_days": 10,
+        "max_new_positions_per_rebalance": 2
+      },
+      "train_metrics": {
+        "total_return": 0.047346,
+        "max_drawdown": 0.172606,
+        "avg_turnover": 0.028945,
+        "positive_month_ratio": 0.666667,
+        "score": 0.062815,
+        "trade_days": 119
+      },
+      "test_metrics": {
+        "total_return": 0.102605,
+        "max_drawdown": 0.043531,
+        "avg_turnover": 0.036458,
+        "positive_month_ratio": 1.0,
+        "score": 0.172514,
+        "trade_days": 64
+      }
+    },
+    {
+      "train_start": "2025-03-01",
+      "train_end": "2025-08-31",
+      "test_start": "2025-09-01",
+      "test_end": "2025-11-30",
+      "best_candidate": {
+        "top_n": 15,
+        "buffer_rank": 25,
+        "rebalance_interval_trade_days": 5,
+        "min_holding_trade_days": 10,
+        "max_new_positions_per_rebalance": 2
+      },
+      "train_metrics": {
+        "total_return": 0.191396,
+        "max_drawdown": 0.155353,
+        "avg_turnover": 0.056,
+        "positive_month_ratio": 0.833333,
+        "score": 0.146552,
+        "trade_days": 125
+      },
+      "test_metrics": {
+        "total_return": -0.003492,
+        "max_drawdown": 0.072208,
+        "avg_turnover": 0.062147,
+        "positive_month_ratio": 0.333333,
+        "score": 0.017618,
+        "trade_days": 59
+      }
+    },
+    {
+      "train_start": "2025-06-01",
+      "train_end": "2025-11-30",
+      "test_start": "2025-12-01",
+      "test_end": "2026-02-28",
+      "best_candidate": {
+        "top_n": 15,
+        "buffer_rank": 25,
+        "rebalance_interval_trade_days": 5,
+        "min_holding_trade_days": 10,
+        "max_new_positions_per_rebalance": 3
+      },
+      "train_metrics": {
+        "total_return": 0.128998,
+        "max_drawdown": 0.075656,
+        "avg_turnover": 0.081843,
+        "positive_month_ratio": 0.833333,
+        "score": 0.141626,
+        "trade_days": 123
+      },
+      "test_metrics": {
+        "total_return": 0.11162,
+        "max_drawdown": 0.04181,
+        "avg_turnover": 0.066667,
+        "positive_month_ratio": 1.0,
+        "score": 0.172105,
+        "trade_days": 57
+      }
+    }
+  ]
+}

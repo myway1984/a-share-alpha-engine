@@ -3,6 +3,7 @@
 这个目录只保留少量代表性输出，方便独立项目首次落库时就带有可参考样例：
 
 - `current_baseline/`：当前主线策略信号快照
+- `multifactor_v2_walk_forward_v1/`：当前主线基线的正式 walk-forward 样本外验证
 - `paper_accounts/`：纸面账户样例
 - `daily_reviews/`：每日复盘样例
 

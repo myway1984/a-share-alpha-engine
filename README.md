@@ -83,18 +83,10 @@ qstrategy-mf --help
 qstrategy-daily-review --help
 ```
 
-Run a backtest:
+Run the current baseline backtest:
 
 ```bash
-PYTHONPATH=src python3 -m qstrategy_v2.cli \
-  --start-date 2024-09-01 \
-  --end-date 2026-03-20 \
-  --top-n 18 \
-  --buffer-rank 30 \
-  --rebalance-interval-trade-days 10 \
-  --min-holding-trade-days 10 \
-  --max-new-positions-per-rebalance 2 \
-  --output-dir reports/run_2024_09_to_2026_03_20
+./scripts/run_current_baseline.sh 2026-03-24
 ```
 
 Generate a daily review:
@@ -103,7 +95,7 @@ Generate a daily review:
 PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
   --signal-report reports/current_baseline/latest_backtest.json \
   --trade-date 2026-03-25 \
-  --top-n 18 \
+  --top-n 15 \
   --paper-account-name paper_current_baseline_500k
 ```
 
@@ -123,6 +115,11 @@ PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
 - [Live Validation Plan](docs/live_validation_plan.md)
 - [Daily Review SOP](docs/daily_post_close_review_sop.md)
 
+## Baseline Assets
+
+- Baseline preset: `config/current_baseline.json`
+- Baseline runner: `scripts/run_current_baseline.sh`
+
 ## Current Status
 
 这个仓库已经不是概念验证，而是一个可以持续迭代的研究底座：
@@ -132,6 +129,15 @@ PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
 - parameter search can run
 - daily review drafts can be generated
 - paper accounts can be tracked continuously
+
+当前主线基线已经收敛到：
+
+- `top_n=15`
+- `buffer_rank=25`
+- `rebalance_interval_trade_days=5`
+- `min_holding_trade_days=10`
+- `max_new_positions_per_rebalance=2`
+- `exclude_factors=price_volume_corr,sue`
 
 下一阶段最适合继续推进的是：
 

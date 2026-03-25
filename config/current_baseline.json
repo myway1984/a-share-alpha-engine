@@ -1,0 +1,29 @@
+{
+  "name": "current_baseline",
+  "description": "Primary baseline selected from walk-forward validation on the post-2024-09 market regime.",
+  "selection_basis": {
+    "source_report": "reports/multifactor_v2_walk_forward_v1/latest_walk_forward.md",
+    "train_months": 6,
+    "test_months": 3,
+    "step_months": 3,
+    "notes": "Chosen for parameter stability across walk-forward windows, with preference for the most frequently recurring conservative portfolio settings."
+  },
+  "strategy": {
+    "start_date_reference": "2024-09-01",
+    "exclude_factors": [
+      "price_volume_corr",
+      "sue"
+    ],
+    "top_n": 15,
+    "buffer_rank": 25,
+    "rebalance_interval_trade_days": 5,
+    "min_holding_trade_days": 10,
+    "max_new_positions_per_rebalance": 2
+  },
+  "execution": {
+    "provider": "tushare",
+    "output_dir": "reports/current_baseline",
+    "signal_report": "reports/current_baseline/latest_backtest.json",
+    "paper_account_name": "paper_current_baseline_500k"
+  }
+}
