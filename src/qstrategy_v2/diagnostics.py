@@ -37,6 +37,14 @@ class FactorDiagnosticsReport:
     summaries: list[FactorDiagnosticSummary]
 
 
+@dataclass(slots=True)
+class FactorHealthAssessment:
+    factor_name: str
+    health: str
+    action: str
+    rationale: str
+
+
 class FactorDiagnosticsRunner:
     def __init__(self, provider: HistoricalDataProvider, config: MultiFactorConfig) -> None:
         self.provider = provider
@@ -247,12 +255,27 @@ def write_factor_diagnostic_outputs(
     output_dir.mkdir(parents=True, exist_ok=True)
     json_path = output_dir / "latest_factor_diagnostics.json"
     md_path = output_dir / "latest_factor_diagnostics.md"
+    assessments = [assess_factor_health(item) for item in report.summaries]
+    strongest = report.summaries[0].factor_name if report.summaries else None
+    weakest = min(report.summaries, key=lambda item: item.mean_ic).factor_name if report.summaries else None
     payload = {
         "start_date": report.start_date.isoformat(),
         "end_date": report.end_date.isoformat(),
         "horizon_trade_days": report.horizon_trade_days,
         "board": report.board,
         "rebalance_dates": [item.isoformat() for item in report.rebalance_dates],
+        "overview": {
+            "rebalance_periods": len(report.rebalance_dates),
+            "factor_count": len(report.summaries),
+            "strongest_factor": strongest,
+            "weakest_factor": weakest,
+            "positive_mean_ic_factors": [
+                item.factor_name for item in report.summaries if item.mean_ic > 0
+            ],
+            "positive_mean_spread_factors": [
+                item.factor_name for item in report.summaries if item.mean_spread > 0
+            ],
+        },
         "summaries": [
             {
                 "factor_name": item.factor_name,
@@ -265,6 +288,15 @@ def write_factor_diagnostic_outputs(
                 "average_coverage": round(item.average_coverage, 2),
             }
             for item in report.summaries
+        ],
+        "assessments": [
+            {
+                "factor_name": item.factor_name,
+                "health": item.health,
+                "action": item.action,
+                "rationale": item.rationale,
+            }
+            for item in assessments
         ],
     }
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -281,6 +313,20 @@ def render_factor_diagnostics_markdown(report: FactorDiagnosticsReport) -> str:
         f"板块：`{report.board or 'all'}`"
     )
     lines.append("")
+    assessments = [assess_factor_health(item) for item in report.summaries]
+    strongest = report.summaries[0].factor_name if report.summaries else "n/a"
+    weakest = min(report.summaries, key=lambda item: item.mean_ic).factor_name if report.summaries else "n/a"
+    lines.append("## 总结")
+    lines.append("")
+    lines.append(f"- 最强因子：`{strongest}`")
+    lines.append(f"- 最弱因子：`{weakest}`")
+    lines.append(
+        f"- `mean_ic > 0` 的因子数：`{sum(1 for item in report.summaries if item.mean_ic > 0)}` / `{len(report.summaries)}`"
+    )
+    lines.append(
+        f"- `mean_spread > 0` 的因子数：`{sum(1 for item in report.summaries if item.mean_spread > 0)}` / `{len(report.summaries)}`"
+    )
+    lines.append("")
     lines.append("## 因子表现")
     lines.append("")
     for item in report.summaries:
@@ -291,4 +337,49 @@ def render_factor_diagnostics_markdown(report: FactorDiagnosticsReport) -> str:
             f"mean_spread `{item.mean_spread:.4f}` | positive_spread `{item.positive_spread_rate:.2%}` | "
             f"coverage `{item.average_coverage:.1f}`"
         )
+    lines.append("")
+    lines.append("## 健康度判断")
+    lines.append("")
+    for item in assessments:
+        lines.append(
+            f"- `{item.factor_name}` | 健康度 `{item.health}` | 建议 `{item.action}` | {item.rationale}"
+        )
+    lines.append("")
+    lines.append("## 使用建议")
+    lines.append("")
+    keep = [item.factor_name for item in assessments if item.action == "保留主线"]
+    watch = [item.factor_name for item in assessments if item.action == "继续观察"]
+    drop = [item.factor_name for item in assessments if item.action == "考虑降权/剔除"]
+    lines.append(f"- 保留主线：`{', '.join(keep) if keep else '无'}`")
+    lines.append(f"- 继续观察：`{', '.join(watch) if watch else '无'}`")
+    lines.append(f"- 考虑降权/剔除：`{', '.join(drop) if drop else '无'}`")
     return "\n".join(lines) + "\n"
+
+
+def assess_factor_health(summary: FactorDiagnosticSummary) -> FactorHealthAssessment:
+    strong_ic = summary.mean_ic >= 0.03
+    strong_spread = summary.mean_spread >= 0.01
+    healthy_hit_rate = summary.positive_ic_rate >= 0.55 and summary.positive_spread_rate >= 0.55
+    weak_ic = summary.mean_ic <= 0
+    weak_spread = summary.mean_spread <= 0
+
+    if strong_ic and strong_spread and healthy_hit_rate:
+        return FactorHealthAssessment(
+            factor_name=summary.factor_name,
+            health="强",
+            action="保留主线",
+            rationale="IC、spread 和胜率都处于较健康区间，适合作为当前主线因子。",
+        )
+    if weak_ic and weak_spread:
+        return FactorHealthAssessment(
+            factor_name=summary.factor_name,
+            health="弱",
+            action="考虑降权/剔除",
+            rationale="mean_ic 与 mean_spread 同时非正，继续保留的边际价值偏低。",
+        )
+    return FactorHealthAssessment(
+        factor_name=summary.factor_name,
+        health="中",
+        action="继续观察",
+        rationale="因子具备一定信息量，但稳定性或强度还不足以直接定义为主线。",
+    )

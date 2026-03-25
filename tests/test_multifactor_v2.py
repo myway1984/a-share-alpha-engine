@@ -8,8 +8,12 @@ from qstrategy_v2.cli import parse_board_factor_weights, parse_factor_weights
 from qstrategy_v2.config import MultiFactorConfig
 from qstrategy_v2.data import infer_board
 from qstrategy_v2.diagnostics import (
+    FactorDiagnosticsReport,
     FactorDiagnosticsRunner,
+    FactorDiagnosticSummary,
+    assess_factor_health,
     quantile_return_spread,
+    render_factor_diagnostics_markdown,
     spearman_rank_corr,
 )
 from qstrategy_v2.models import (
@@ -679,6 +683,77 @@ def test_factor_diagnostics_runner_filters_by_board() -> None:
 
     assert report.board == "star"
     assert len(report.rebalance_dates) == 2
+
+
+def test_assess_factor_health_classifies_strength() -> None:
+    strong = assess_factor_health(
+        FactorDiagnosticSummary(
+            factor_name="ep",
+            mean_ic=0.04,
+            ic_ir=0.8,
+            positive_ic_rate=0.6,
+            mean_spread=0.02,
+            positive_spread_rate=0.7,
+            observation_count=12,
+            average_coverage=50.0,
+        )
+    )
+    weak = assess_factor_health(
+        FactorDiagnosticSummary(
+            factor_name="roe_ttm",
+            mean_ic=-0.01,
+            ic_ir=-0.2,
+            positive_ic_rate=0.4,
+            mean_spread=-0.02,
+            positive_spread_rate=0.3,
+            observation_count=12,
+            average_coverage=50.0,
+        )
+    )
+
+    assert strong.health == "强"
+    assert strong.action == "保留主线"
+    assert weak.health == "弱"
+    assert weak.action == "考虑降权/剔除"
+
+
+def test_render_factor_diagnostics_markdown_includes_summary_sections() -> None:
+    report = FactorDiagnosticsReport(
+        start_date=date(2026, 1, 1),
+        end_date=date(2026, 3, 1),
+        horizon_trade_days=5,
+        board=None,
+        rebalance_dates=[date(2026, 1, 10), date(2026, 1, 20)],
+        summaries=[
+            FactorDiagnosticSummary(
+                factor_name="ep",
+                mean_ic=0.04,
+                ic_ir=0.8,
+                positive_ic_rate=0.6,
+                mean_spread=0.02,
+                positive_spread_rate=0.7,
+                observation_count=12,
+                average_coverage=50.0,
+            ),
+            FactorDiagnosticSummary(
+                factor_name="roe_ttm",
+                mean_ic=-0.01,
+                ic_ir=-0.2,
+                positive_ic_rate=0.4,
+                mean_spread=-0.02,
+                positive_spread_rate=0.3,
+                observation_count=12,
+                average_coverage=50.0,
+            ),
+        ],
+    )
+
+    markdown = render_factor_diagnostics_markdown(report)
+
+    assert "## 总结" in markdown
+    assert "## 健康度判断" in markdown
+    assert "## 使用建议" in markdown
+    assert "保留主线" in markdown
 
 
 def test_parse_int_list_parses_csv_values() -> None:
