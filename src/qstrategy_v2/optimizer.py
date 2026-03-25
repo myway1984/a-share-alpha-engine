@@ -65,6 +65,25 @@ class WalkForwardReport:
     aggregate_test_metrics: GridSearchMetrics
 
 
+def build_walk_forward_report(
+    start_date: date,
+    end_date: date,
+    train_months: int,
+    test_months: int,
+    step_months: int,
+    windows: list[WalkForwardWindowResult],
+) -> WalkForwardReport:
+    return WalkForwardReport(
+        start_date=start_date,
+        end_date=end_date,
+        train_months=train_months,
+        test_months=test_months,
+        step_months=step_months,
+        windows=list(windows),
+        aggregate_test_metrics=summarize_walk_forward_windows(windows),
+    )
+
+
 @dataclass(slots=True)
 class PreparedTradeDay:
     trade_date: date
@@ -390,6 +409,7 @@ def run_walk_forward(
     rebalance_interval_values: list[int],
     min_holding_trade_day_values: list[int],
     max_new_position_values: list[int],
+    progress_callback=None,
 ) -> WalkForwardReport:
     if train_months <= 0 or test_months <= 0 or step_months <= 0:
         raise ValueError("train_months, test_months, and step_months must be > 0")
@@ -444,16 +464,26 @@ def run_walk_forward(
                 test_metrics=summarize_backtest(test_result),
             )
         )
+        if progress_callback is not None:
+            progress_callback(
+                build_walk_forward_report(
+                    start_date=start_date,
+                    end_date=end_date,
+                    train_months=train_months,
+                    test_months=test_months,
+                    step_months=step_months,
+                    windows=windows,
+                )
+            )
         cursor = add_months(cursor, step_months)
 
-    return WalkForwardReport(
+    return build_walk_forward_report(
         start_date=start_date,
         end_date=end_date,
         train_months=train_months,
         test_months=test_months,
         step_months=step_months,
         windows=windows,
-        aggregate_test_metrics=summarize_walk_forward_windows(windows),
     )
 
 

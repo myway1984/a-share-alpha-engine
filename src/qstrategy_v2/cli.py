@@ -399,6 +399,23 @@ def main() -> int:
                 )
             return 0
         if args.walk_forward_only:
+            walk_forward_output_dir = Path(args.walk_forward_output_dir)
+
+            def checkpoint(report) -> None:
+                write_walk_forward_outputs(
+                    report,
+                    walk_forward_output_dir,
+                )
+                if report.windows:
+                    latest = report.windows[-1]
+                    print(
+                        "Completed window: "
+                        f"train={latest.train_start.isoformat()}~{latest.train_end.isoformat()} "
+                        f"test={latest.test_start.isoformat()}~{latest.test_end.isoformat()} "
+                        f"oos_return={latest.test_metrics.total_return:.2%} "
+                        f"oos_drawdown={latest.test_metrics.max_drawdown:.2%}"
+                    )
+
             report = run_walk_forward(
                 provider=provider,
                 base_config=config,
@@ -412,10 +429,11 @@ def main() -> int:
                 rebalance_interval_values=parse_int_list(args.grid_rebalance_interval_values),
                 min_holding_trade_day_values=parse_int_list(args.grid_min_holding_trade_day_values),
                 max_new_position_values=parse_int_list(args.grid_max_new_position_values),
+                progress_callback=checkpoint,
             )
             json_path, md_path = write_walk_forward_outputs(
                 report,
-                Path(args.walk_forward_output_dir),
+                walk_forward_output_dir,
             )
             print(f"Generated walk-forward report: {md_path}")
             print(f"Generated walk-forward data:   {json_path}")

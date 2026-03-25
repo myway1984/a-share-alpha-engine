@@ -930,3 +930,51 @@ def test_run_walk_forward_returns_window_results() -> None:
 
     assert len(report.windows) >= 1
     assert report.aggregate_test_metrics.trade_days > 0
+
+
+def test_run_walk_forward_invokes_progress_callback_per_window() -> None:
+    dates = [
+        date(2026, 1, 1),
+        date(2026, 1, 15),
+        date(2026, 2, 1),
+        date(2026, 2, 15),
+        date(2026, 3, 1),
+        date(2026, 3, 15),
+    ]
+    snapshots_by_date = {}
+    for idx, trade_date in enumerate(dates):
+        snapshots_by_date[trade_date] = [
+            build_snapshot(code="A", name="A", trade_date=trade_date, pe_ttm=2.0, close_price=10.0 + idx * 0.3, amount=120.0),
+            build_snapshot(code="B", name="B", trade_date=trade_date, pe_ttm=4.0, close_price=10.0, amount=110.0),
+            build_snapshot(code="C", name="C", trade_date=trade_date, pe_ttm=8.0, close_price=10.0 - idx * 0.2, amount=100.0),
+        ]
+    config = MultiFactorConfig(
+        lookback_days=1,
+        top_n=1,
+        buffer_rank=6,
+        rebalance_interval_trade_days=1,
+        factor_directions={name: direction for name, direction in DEFAULT_FACTOR_DIRECTIONS.items()},
+        excluded_factors=tuple(name for name in DEFAULT_FACTOR_DIRECTIONS if name != "ep"),
+    )
+    seen_window_counts: list[int] = []
+
+    def progress(report) -> None:
+        seen_window_counts.append(len(report.windows))
+
+    report = run_walk_forward(
+        provider=FakeProvider(snapshots_by_date),
+        base_config=config,
+        start_date=date(2026, 1, 1),
+        end_date=date(2026, 3, 31),
+        train_months=1,
+        test_months=1,
+        step_months=1,
+        top_n_values=[1],
+        buffer_rank_values=[6],
+        rebalance_interval_values=[1],
+        min_holding_trade_day_values=[1],
+        max_new_position_values=[1],
+        progress_callback=progress,
+    )
+
+    assert seen_window_counts == list(range(1, len(report.windows) + 1))
