@@ -2,8 +2,8 @@
 
 配套文档：
 
-- [收盘后复盘与调仓 SOP](/Users/stanlee/Projects/2026-new-projects/a-share-qstrategy-v1/docs/daily_post_close_review_sop.md)
-- [每日收盘后复盘模板](/Users/stanlee/Projects/2026-new-projects/a-share-qstrategy-v1/docs/daily_post_close_review_template.md)
+- [收盘后复盘与调仓 SOP](daily_post_close_review_sop.md)
+- [每日收盘后复盘模板](daily_post_close_review_template.md)
 
 ## 1. 目的
 
@@ -65,7 +65,7 @@
 
 对应报告：
 
-- [2024-11-01 到 2026-03-20 回测结果](/Users/stanlee/Projects/2026-new-projects/a-share-qstrategy-v1/reports/multifactor_v2_2024_11_to_2026_03_20_boardweights_v2_u50/latest_backtest.md)
+- `reports/current_baseline/latest_backtest.md`
 
 ## 4. 实盘验证目标
 

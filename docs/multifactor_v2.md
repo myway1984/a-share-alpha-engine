@@ -59,8 +59,8 @@
 ## 因子诊断结论
 
 - `2019` 与 `2020` 的同口径因子诊断已完成：
-  - `2019` 诊断结果在 [reports/multifactor_v2_2019_factor_diagnostics/latest_factor_diagnostics.md](/Users/stanlee/Projects/2026-new-projects/a-share-qstrategy-v1/reports/multifactor_v2_2019_factor_diagnostics/latest_factor_diagnostics.md)
-  - `2020` 诊断结果在 [reports/multifactor_v2_2020_factor_diagnostics/latest_factor_diagnostics.md](/Users/stanlee/Projects/2026-new-projects/a-share-qstrategy-v1/reports/multifactor_v2_2020_factor_diagnostics/latest_factor_diagnostics.md)
+  - `2019` 与 `2020` 的详细诊断结果来自原研究工作区
+  - 独立仓库当前仅保留主线基线样例，不再携带完整历史实验目录
 - 结论：
   - `sue` 在 `2020` 转为负贡献，`mean_ic` 和 `mean_spread` 都为负。
   - `one_month_reversal` 在 `2020` 仍为正，但强度明显弱于 `2019`。
