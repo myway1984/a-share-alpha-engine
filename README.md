@@ -1,64 +1,89 @@
-# A股截面多因子策略 V2
+# A-Share Alpha Engine
 
-这个仓库是从原工作区中独立抽出的 A 股截面多因子量化策略项目，目标是把“研究、回测、复盘、模拟跟踪”沉淀成一个可持续迭代的独立代码库。
+A standalone A-share cross-sectional multi-factor research project focused on:
 
-当前主线不是旧的题材龙头观察机，而是新的 `qstrategy_v2`：
+- stock selection
+- portfolio construction
+- backtesting
+- daily review
+- paper trading
 
-- 全市场基础过滤与股票池构建
-- 多因子打分与截面中性化
+中文名：`A股阿尔法引擎`
+
+## What This Project Does
+
+这个项目不是“单只股票择时脚本”，而是一套完整的组合研究框架。
+
+它每天做的事情可以概括成一句话：
+
+`先从 A 股里筛出一批可交易、流动性足够的股票，再用多因子打分，最后低频、分批地持有排名靠前的一篮子股票。`
+
+当前主线已经覆盖：
+
+- 全市场基础股票池过滤
+- 多因子计算与截面标准化
+- 行业 / 市值 / 板块中性化
 - 低频慢换仓组合管理
-- 历史回测、参数搜索、日常复盘
-- 纸面账户连续跟踪
+- 回测与参数优化
+- 收盘后复盘
+- 模拟账户连续跟踪
 
-## 当前策略思路
+## Current Strategy Snapshot
 
-一句话概括：
+当前主线更偏向：
 
-`先从 A 股里筛出可交易且流动性足够的股票，再用多因子给它们打分，最后低频、分批地持有排名靠前的一篮子股票。`
+- `短期价格行为`
+- `20 日换手`
+- `20 日波动`
+- `EP`
+- `ROE_TTM`
 
-当前主线的核心特征：
+组合层强调：
 
-- 股票池：过滤 `ST`、停牌、次新、无量、一字板等异常样本
-- 因子：短期价格行为、20 日换手、20 日波动、`EP`、`ROE_TTM`
-- 处理：去极值、板块内标准化、行业/市值/板块中性化
-- 组合：`Top N` 持仓、缓冲区卖出、固定调仓频率、最小持有交易日
-- 执行：考虑手续费、滑点、整手约束
+- 分散持仓
+- 更慢调仓
+- 最小持有交易日
+- 每次调仓限制新增仓位数量
 
-## 目录结构
+这套策略不是纯追涨模型，也不是纯价值模型，更像：
+
+`截面因子选股 + 低频组合管理 + 收盘后决策执行`
+
+## Repository Layout
 
 ```text
-src/qstrategy_v2/        核心策略代码
-docs/                    研究与执行文档
-tests/                   最小测试集
-config/                  主题/配置文件
-reports/current_baseline 示例基线回测输出
-reports/paper_accounts/  示例纸面账户快照
-reports/daily_reviews/   示例每日复盘
+src/qstrategy_v2/        Core strategy package
+docs/                    Research, execution, and process documents
+tests/                   Lightweight verification tests
+config/                  Static config files
+reports/current_baseline Representative baseline backtest outputs
+reports/paper_accounts/  Paper account snapshots
+reports/daily_reviews/   Daily review examples
 ```
 
-## 快速开始
+## Quick Start
 
-安装：
+Install:
 
 ```bash
 python3 -m pip install -e .
 ```
 
-需要的环境变量：
+Required environment variables:
 
 ```bash
 export TUSHARE_TOKEN=...
 export EASTMONEY_APIKEY=...
 ```
 
-常用命令：
+Common commands:
 
 ```bash
 qstrategy-mf --help
 qstrategy-daily-review --help
 ```
 
-回测示例：
+Run a backtest:
 
 ```bash
 PYTHONPATH=src python3 -m qstrategy_v2.cli \
@@ -72,7 +97,7 @@ PYTHONPATH=src python3 -m qstrategy_v2.cli \
   --output-dir reports/run_2024_09_to_2026_03_20
 ```
 
-每日复盘示例：
+Generate a daily review:
 
 ```bash
 PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
@@ -82,23 +107,33 @@ PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
   --paper-account-name paper_current_baseline_500k
 ```
 
-## 当前保留的代表性产出
+## Representative Outputs
 
-- 基线信号快照：`reports/current_baseline/latest_backtest.md`
-- 纸面账户快照：`reports/paper_accounts/paper_current_baseline_500k.md`
-- 每日复盘样例：`reports/daily_reviews/2026-03-25_review.md`
+- Baseline signal snapshot: `reports/current_baseline/latest_backtest.md`
+- Paper account snapshot: `reports/paper_accounts/paper_current_baseline_500k.md`
+- Daily review example: `reports/daily_reviews/2026-03-25_review.md`
 
-## 当前状态
+## Docs
 
-这个仓库已经具备：
+- [Version Roadmap](docs/version_roadmap.md)
+- [Repository Workflow](docs/repository_workflow.md)
+- [Multi-Factor Research Notes](docs/multifactor_v2.md)
+- [Parameter Optimization Plan](docs/parameter_optimization_plan.md)
+- [Live Validation Plan](docs/live_validation_plan.md)
+- [Daily Review SOP](docs/daily_post_close_review_sop.md)
 
-- 独立的多因子代码骨架
-- 可运行的回测与优化流程
-- 每日复盘草稿生成
-- 模拟账户连续跟踪
+## Current Status
 
-接下来更适合继续做的是：
+这个仓库已经不是概念验证，而是一个可以持续迭代的研究底座：
 
-- 在 `2024-09` 之后的新市场环境下继续调优
-- 逐步加强风险控制与实盘验证流程
-- 接入更稳的双数据源降级逻辑
+- core code is independent
+- historical backtests can run
+- parameter search can run
+- daily review drafts can be generated
+- paper accounts can be tracked continuously
+
+下一阶段最适合继续推进的是：
+
+- 在 `2024-09` 之后的新市场环境里继续做参数和风险优化
+- 加强双数据源降级与稳定性检查
+- 逐步把研究盘、模拟盘、实盘验证流程完全打通
