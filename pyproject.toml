@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a-share-multifactor-v2"
+version = "0.1.0"
+description = "Standalone A-share cross-sectional multi-factor strategy research project."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Stan Lee & Codex" }
+]
+dependencies = [
+  "requests>=2.31"
+]
+
+[project.scripts]
+qstrategy-mf = "qstrategy_v2.cli:main"
+qstrategy-daily-review = "qstrategy_v2.daily_workflow:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

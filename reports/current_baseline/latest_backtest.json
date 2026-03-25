@@ -1,0 +1,2397 @@
+{
+  "daily_nav": [
+    {
+      "trade_date": "2024-09-02",
+      "nav": 997800.0,
+      "turnover": 1.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-03",
+      "nav": 1002074.6955,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-04",
+      "nav": 982197.7498,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-05",
+      "nav": 987416.3309,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-06",
+      "nav": 967689.9821,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-09",
+      "nav": 956955.1836,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-10",
+      "nav": 963370.8495,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-11",
+      "nav": 961253.2617,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-12",
+      "nav": 953141.3587,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-13",
+      "nav": 945571.5981,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-18",
+      "nav": 945677.8114,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-19",
+      "nav": 949786.812,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-20",
+      "nav": 949651.3245,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-23",
+      "nav": 950498.9503,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-24",
+      "nav": 1002266.4343,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-25",
+      "nav": 1013285.1681,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-26",
+      "nav": 1056859.6511,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-27",
+      "nav": 1126176.8307,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-09-30",
+      "nav": 1259797.2913,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-08",
+      "nav": 1411056.1341,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-09",
+      "nav": 1324493.9272,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-10",
+      "nav": 1296797.5582,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-11",
+      "nav": 1241135.5762,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-14",
+      "nav": 1272613.7514,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-15",
+      "nav": 1248160.5501,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-16",
+      "nav": 1226660.5977,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-17",
+      "nav": 1223064.3768,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-18",
+      "nav": 1311626.2622,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-21",
+      "nav": 1326951.6334,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-22",
+      "nav": 1333111.1634,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-23",
+      "nav": 1320326.1394,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-24",
+      "nav": 1314242.1637,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-25",
+      "nav": 1346769.0208,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-28",
+      "nav": 1341082.4316,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-29",
+      "nav": 1321934.594,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-30",
+      "nav": 1327518.1982,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-10-31",
+      "nav": 1346438.8313,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-01",
+      "nav": 1319320.7075,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-04",
+      "nav": 1352608.9631,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-05",
+      "nav": 1405319.6973,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-06",
+      "nav": 1401120.7245,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-07",
+      "nav": 1442077.561,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-08",
+      "nav": 1450026.7041,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-11",
+      "nav": 1502220.6165,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-12",
+      "nav": 1492674.6777,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-13",
+      "nav": 1500585.9454,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-14",
+      "nav": 1444555.2089,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-15",
+      "nav": 1385861.7634,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-18",
+      "nav": 1359057.8787,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-19",
+      "nav": 1390312.3258,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-20",
+      "nav": 1396528.1061,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-21",
+      "nav": 1399539.5696,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-22",
+      "nav": 1350889.2182,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-25",
+      "nav": 1323298.3369,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-26",
+      "nav": 1316260.9009,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-27",
+      "nav": 1354308.0857,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-28",
+      "nav": 1340625.9588,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-11-29",
+      "nav": 1363536.0385,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-02",
+      "nav": 1388348.7747,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-03",
+      "nav": 1373922.8819,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-04",
+      "nav": 1355030.5627,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-05",
+      "nav": 1361534.1427,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-06",
+      "nav": 1379760.7101,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-09",
+      "nav": 1365704.3049,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-10",
+      "nav": 1375276.384,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-11",
+      "nav": 1382619.9058,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-12",
+      "nav": 1401841.178,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-13",
+      "nav": 1364012.124,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-16",
+      "nav": 1337194.4954,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-17",
+      "nav": 1329471.8605,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-18",
+      "nav": 1337843.7261,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-19",
+      "nav": 1353695.2552,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-20",
+      "nav": 1364725.3294,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-23",
+      "nav": 1347943.1632,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-24",
+      "nav": 1367823.4492,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-25",
+      "nav": 1354495.4025,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-26",
+      "nav": 1384753.3513,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-27",
+      "nav": 1378487.9807,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-30",
+      "nav": 1366969.6833,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2024-12-31",
+      "nav": 1317131.2653,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-02",
+      "nav": 1270268.1167,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-03",
+      "nav": 1246149.218,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-06",
+      "nav": 1243753.5737,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-07",
+      "nav": 1270512.8707,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-08",
+      "nav": 1254649.4151,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-09",
+      "nav": 1250998.2061,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-10",
+      "nav": 1210021.357,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-13",
+      "nav": 1206767.0054,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-14",
+      "nav": 1265547.7579,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-15",
+      "nav": 1243687.3294,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-16",
+      "nav": 1275396.0825,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-17",
+      "nav": 1269343.7396,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-20",
+      "nav": 1291898.8621,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-21",
+      "nav": 1302132.8919,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-22",
+      "nav": 1306948.6482,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-23",
+      "nav": 1300884.3684,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-24",
+      "nav": 1309997.2644,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-01-27",
+      "nav": 1255360.5747,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-05",
+      "nav": 1224859.6221,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-06",
+      "nav": 1260738.1536,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-07",
+      "nav": 1303987.0552,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-10",
+      "nav": 1315933.9063,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-11",
+      "nav": 1313852.521,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-12",
+      "nav": 1329347.1754,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-13",
+      "nav": 1305080.7528,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-14",
+      "nav": 1323087.3191,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-17",
+      "nav": 1353695.1389,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-18",
+      "nav": 1317055.7621,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-19",
+      "nav": 1339411.4419,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-20",
+      "nav": 1339950.2007,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-21",
+      "nav": 1378092.4253,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-24",
+      "nav": 1355183.4791,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-25",
+      "nav": 1337945.8279,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-26",
+      "nav": 1356428.554,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-27",
+      "nav": 1332105.319,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-02-28",
+      "nav": 1266634.3741,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-03",
+      "nav": 1261609.4862,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-04",
+      "nav": 1271291.5802,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-05",
+      "nav": 1279067.222,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-06",
+      "nav": 1318724.5593,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-07",
+      "nav": 1295968.6387,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-10",
+      "nav": 1286307.655,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-11",
+      "nav": 1278032.9045,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-12",
+      "nav": 1281470.5308,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-13",
+      "nav": 1258892.0914,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-14",
+      "nav": 1301573.8969,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-17",
+      "nav": 1299289.348,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-18",
+      "nav": 1309026.1937,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-19",
+      "nav": 1293899.6778,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-20",
+      "nav": 1278971.6528,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-21",
+      "nav": 1251505.6467,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-24",
+      "nav": 1254905.1291,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-25",
+      "nav": 1235351.9609,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-26",
+      "nav": 1243230.2756,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-27",
+      "nav": 1248420.461,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-28",
+      "nav": 1237620.5698,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-03-31",
+      "nav": 1228189.2454,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-01",
+      "nav": 1218883.447,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-02",
+      "nav": 1215861.3276,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-03",
+      "nav": 1186953.3286,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-07",
+      "nav": 1048240.467,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-08",
+      "nav": 1048096.337,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-09",
+      "nav": 1074338.9032,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-10",
+      "nav": 1101870.0709,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-11",
+      "nav": 1117647.484,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-14",
+      "nav": 1131831.1023,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-15",
+      "nav": 1124625.7203,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-16",
+      "nav": 1112615.9116,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-17",
+      "nav": 1113060.4458,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-18",
+      "nav": 1117069.687,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-21",
+      "nav": 1131261.9805,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-22",
+      "nav": 1121004.1397,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-23",
+      "nav": 1138299.8706,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-24",
+      "nav": 1119869.9626,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-25",
+      "nav": 1136111.9561,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-28",
+      "nav": 1123813.9464,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-29",
+      "nav": 1123484.9141,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-04-30",
+      "nav": 1136089.2756,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-06",
+      "nav": 1166030.5822,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-07",
+      "nav": 1166916.0371,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-08",
+      "nav": 1190250.7664,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-09",
+      "nav": 1171013.0504,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-12",
+      "nav": 1210269.9062,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-13",
+      "nav": 1206637.5156,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-14",
+      "nav": 1216136.7186,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-15",
+      "nav": 1184713.5809,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-16",
+      "nav": 1185756.1808,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-19",
+      "nav": 1181326.5274,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-20",
+      "nav": 1185462.0902,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-21",
+      "nav": 1185506.2851,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-22",
+      "nav": 1175172.4841,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-23",
+      "nav": 1160747.7675,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-26",
+      "nav": 1162332.2057,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-27",
+      "nav": 1151787.4209,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-28",
+      "nav": 1130760.8692,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-29",
+      "nav": 1152530.7462,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-05-30",
+      "nav": 1145228.467,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-03",
+      "nav": 1158670.2267,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-04",
+      "nav": 1171275.8485,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-05",
+      "nav": 1191762.6705,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-06",
+      "nav": 1192026.5488,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-09",
+      "nav": 1205216.3186,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-10",
+      "nav": 1187756.6804,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-11",
+      "nav": 1196070.6132,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-12",
+      "nav": 1203468.251,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-13",
+      "nav": 1201629.4302,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-16",
+      "nav": 1230425.2521,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-17",
+      "nav": 1231510.2258,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-18",
+      "nav": 1244706.3643,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-19",
+      "nav": 1220415.7788,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-20",
+      "nav": 1206890.8146,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-23",
+      "nav": 1224986.2479,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-24",
+      "nav": 1246981.2143,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-25",
+      "nav": 1277885.4938,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-26",
+      "nav": 1284599.1304,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-27",
+      "nav": 1287727.5848,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-06-30",
+      "nav": 1301885.7769,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-01",
+      "nav": 1291467.14,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-02",
+      "nav": 1274003.0726,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-03",
+      "nav": 1290546.3133,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-04",
+      "nav": 1283967.3995,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-07",
+      "nav": 1282107.4504,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-08",
+      "nav": 1322734.492,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-09",
+      "nav": 1314314.2314,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-10",
+      "nav": 1311792.0313,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-11",
+      "nav": 1316851.0995,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-14",
+      "nav": 1308714.4394,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-15",
+      "nav": 1345457.5143,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-16",
+      "nav": 1343362.6777,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-17",
+      "nav": 1362847.1982,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-18",
+      "nav": 1366152.8483,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-21",
+      "nav": 1370874.8949,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-22",
+      "nav": 1376045.6686,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-23",
+      "nav": 1368651.8342,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-24",
+      "nav": 1386694.9074,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-25",
+      "nav": 1381209.8275,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-28",
+      "nav": 1387459.36,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-29",
+      "nav": 1406522.4968,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-30",
+      "nav": 1394348.0855,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-07-31",
+      "nav": 1374216.872,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-01",
+      "nav": 1356490.7826,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-04",
+      "nav": 1370170.0934,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-05",
+      "nav": 1379118.4719,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-06",
+      "nav": 1390858.6483,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-07",
+      "nav": 1387518.1616,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-08",
+      "nav": 1392296.0035,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-11",
+      "nav": 1409772.3262,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-12",
+      "nav": 1437512.4227,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-13",
+      "nav": 1487417.8941,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-14",
+      "nav": 1467009.162,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-15",
+      "nav": 1492085.4519,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-18",
+      "nav": 1524842.5871,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-19",
+      "nav": 1518826.8087,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-20",
+      "nav": 1537145.5874,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-21",
+      "nav": 1532974.6723,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-22",
+      "nav": 1591527.3482,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-25",
+      "nav": 1666849.5533,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-26",
+      "nav": 1664763.6025,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-27",
+      "nav": 1644561.0526,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-28",
+      "nav": 1719545.3845,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-08-29",
+      "nav": 1750885.3626,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-01",
+      "nav": 1802105.858,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-02",
+      "nav": 1737190.5299,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-03",
+      "nav": 1733866.2019,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-04",
+      "nav": 1637601.5383,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-05",
+      "nav": 1723206.221,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-08",
+      "nav": 1708383.847,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-09",
+      "nav": 1687697.2168,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-10",
+      "nav": 1717722.7708,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-11",
+      "nav": 1814966.5896,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-12",
+      "nav": 1815367.614,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-15",
+      "nav": 1817146.5641,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-16",
+      "nav": 1846511.5401,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-17",
+      "nav": 1870270.058,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-18",
+      "nav": 1883931.2962,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-19",
+      "nav": 1891943.3757,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-22",
+      "nav": 1933637.1126,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-23",
+      "nav": 1959296.0042,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-24",
+      "nav": 1999988.658,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-25",
+      "nav": 2048758.8813,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-26",
+      "nav": 1994138.4909,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-29",
+      "nav": 2057480.8554,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-09-30",
+      "nav": 2067499.4473,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-09",
+      "nav": 2085147.6483,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-10",
+      "nav": 1991680.7306,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-13",
+      "nav": 1976185.6214,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-14",
+      "nav": 1891002.385,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-15",
+      "nav": 1935483.2049,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-16",
+      "nav": 1938492.4617,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-17",
+      "nav": 1870235.9005,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-20",
+      "nav": 1892955.9222,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-21",
+      "nav": 1961620.2677,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-22",
+      "nav": 1947806.6241,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-23",
+      "nav": 1951944.621,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-24",
+      "nav": 2039140.2373,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-27",
+      "nav": 2094770.3249,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-28",
+      "nav": 2075623.1627,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-29",
+      "nav": 2123597.6902,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-30",
+      "nav": 2093364.8915,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-10-31",
+      "nav": 1997982.3098,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-03",
+      "nav": 1990712.0902,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-04",
+      "nav": 1947065.2606,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-05",
+      "nav": 1947021.0855,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-06",
+      "nav": 1998233.9615,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-07",
+      "nav": 1992412.9768,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-10",
+      "nav": 1967295.4293,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-11",
+      "nav": 1914360.6072,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-12",
+      "nav": 1905187.7515,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-13",
+      "nav": 1941594.9545,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-14",
+      "nav": 1894653.1185,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-17",
+      "nav": 1897762.0909,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-18",
+      "nav": 1878781.5414,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-19",
+      "nav": 1886713.7463,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-20",
+      "nav": 1881918.7303,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-21",
+      "nav": 1783572.727,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-24",
+      "nav": 1765006.6688,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-25",
+      "nav": 1810301.1993,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-26",
+      "nav": 1861882.7707,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-27",
+      "nav": 1862585.887,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-11-28",
+      "nav": 1877049.0759,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-01",
+      "nav": 1901240.5017,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-02",
+      "nav": 1880135.864,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-03",
+      "nav": 1871776.8659,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-04",
+      "nav": 1908171.9442,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-05",
+      "nav": 1923476.7917,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-08",
+      "nav": 1996831.6838,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-09",
+      "nav": 2007096.1352,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-10",
+      "nav": 2005470.6097,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-11",
+      "nav": 1960585.5435,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-12",
+      "nav": 1974084.1805,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-15",
+      "nav": 1919414.4253,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-16",
+      "nav": 1866461.7165,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-17",
+      "nav": 1942293.7859,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-18",
+      "nav": 1910300.7497,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-19",
+      "nav": 1913697.1199,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-22",
+      "nav": 1984237.1162,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-23",
+      "nav": 1983770.9502,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-24",
+      "nav": 2005463.6615,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-25",
+      "nav": 1999259.5196,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-26",
+      "nav": 2015586.4343,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-29",
+      "nav": 2004437.8553,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-30",
+      "nav": 2026840.9571,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2025-12-31",
+      "nav": 2003516.9705,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-05",
+      "nav": 2057828.234,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-06",
+      "nav": 2082055.1832,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-07",
+      "nav": 2101025.1113,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-08",
+      "nav": 2084588.567,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-09",
+      "nav": 2119000.1797,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-12",
+      "nav": 2121699.3664,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-13",
+      "nav": 2086393.5527,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-14",
+      "nav": 2112918.1795,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-15",
+      "nav": 2144891.9502,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-16",
+      "nav": 2143747.1498,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-19",
+      "nav": 2125762.5259,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-20",
+      "nav": 2089368.0328,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-21",
+      "nav": 2123967.8965,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-22",
+      "nav": 2144957.8145,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-23",
+      "nav": 2144408.1514,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-26",
+      "nav": 2132296.1864,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-27",
+      "nav": 2153446.8501,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-28",
+      "nav": 2159902.1484,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-29",
+      "nav": 2125929.1577,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-01-30",
+      "nav": 2143345.2607,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-02",
+      "nav": 2075237.2935,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-03",
+      "nav": 2117547.1704,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-04",
+      "nav": 2089250.6046,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-05",
+      "nav": 2032595.59,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-06",
+      "nav": 2010548.8774,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-09",
+      "nav": 2104893.7735,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-10",
+      "nav": 2113984.2076,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-11",
+      "nav": 2100136.3428,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-12",
+      "nav": 2139851.9231,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-13",
+      "nav": 2098109.5166,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-24",
+      "nav": 2146295.1152,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-25",
+      "nav": 2182066.0575,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-26",
+      "nav": 2209565.1361,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-02-27",
+      "nav": 2206369.3592,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-02",
+      "nav": 2213099.2184,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-03",
+      "nav": 2106561.5334,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-04",
+      "nav": 2086385.1234,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-05",
+      "nav": 2131761.7605,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-06",
+      "nav": 2103310.3462,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-09",
+      "nav": 2071944.6597,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-10",
+      "nav": 2136028.7114,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-11",
+      "nav": 2138578.0236,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-12",
+      "nav": 2130139.8904,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-13",
+      "nav": 2107643.4906,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-16",
+      "nav": 2100996.2219,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-17",
+      "nav": 2030867.7626,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-18",
+      "nav": 2073488.8947,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-19",
+      "nav": 2025097.325,
+      "turnover": 0.2222,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-20",
+      "nav": 2034307.3179,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-23",
+      "nav": 2034307.3179,
+      "turnover": 0.0,
+      "holdings": 18
+    },
+    {
+      "trade_date": "2026-03-24",
+      "nav": 2034307.3179,
+      "turnover": 0.0,
+      "holdings": 18
+    }
+  ],
+  "latest_rankings": [],
+  "latest_orders": [],
+  "latest_holdings": [
+    {
+      "code": "300274",
+      "name": "阳光电源",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "电力设备",
+      "total_score": null
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "weight": 0.055556,
+      "board": "star",
+      "industry_l1": "电子",
+      "total_score": null
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "通信",
+      "total_score": null
+    },
+    {
+      "code": "601600",
+      "name": "中国铝业",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "有色金属",
+      "total_score": null
+    },
+    {
+      "code": "688008",
+      "name": "澜起科技",
+      "weight": 0.055556,
+      "board": "star",
+      "industry_l1": "电子",
+      "total_score": null
+    },
+    {
+      "code": "300476",
+      "name": "胜宏科技",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "电子",
+      "total_score": null
+    },
+    {
+      "code": "002281",
+      "name": "光迅科技",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "通信",
+      "total_score": null
+    },
+    {
+      "code": "600570",
+      "name": "恒生电子",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "计算机",
+      "total_score": null
+    },
+    {
+      "code": "002340",
+      "name": "格林美",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "电力设备",
+      "total_score": null
+    },
+    {
+      "code": "600105",
+      "name": "永鼎股份",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "通信",
+      "total_score": null
+    },
+    {
+      "code": "688521",
+      "name": "芯原股份",
+      "weight": 0.055556,
+      "board": "star",
+      "industry_l1": "电子",
+      "total_score": null
+    },
+    {
+      "code": "002389",
+      "name": "航天彩虹",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "国防军工",
+      "total_score": null
+    },
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "有色金属",
+      "total_score": null
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "电力设备",
+      "total_score": null
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "通信",
+      "total_score": null
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "weight": 0.055556,
+      "board": "gem",
+      "industry_l1": "通信",
+      "total_score": null
+    },
+    {
+      "code": "000938",
+      "name": "紫光股份",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "计算机",
+      "total_score": null
+    },
+    {
+      "code": "603799",
+      "name": "华友钴业",
+      "weight": 0.055556,
+      "board": "main",
+      "industry_l1": "有色金属",
+      "total_score": null
+    }
+  ],
+  "segments": []
+}
