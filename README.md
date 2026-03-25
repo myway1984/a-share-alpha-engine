@@ -116,6 +116,7 @@ PYTHONPATH=src python3 -m qstrategy_v2.daily_workflow \
 ## Docs
 
 - [Version Roadmap](docs/version_roadmap.md)
+- [Model Upgrade Roadmap V1](docs/model_upgrade_roadmap_v1.md)
 - [Repository Workflow](docs/repository_workflow.md)
 - [Multi-Factor Research Notes](docs/multifactor_v2.md)
 - [Parameter Optimization Plan](docs/parameter_optimization_plan.md)
