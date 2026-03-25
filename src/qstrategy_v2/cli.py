@@ -16,7 +16,13 @@ from .data import (
     TushareHistoryProvider,
 )
 from .diagnostics import FactorDiagnosticsRunner, write_factor_diagnostic_outputs
-from .optimizer import parse_int_list, run_grid_search, write_grid_search_outputs
+from .optimizer import (
+    parse_int_list,
+    run_grid_search,
+    run_walk_forward,
+    write_grid_search_outputs,
+    write_walk_forward_outputs,
+)
 from .paper_account import (
     fetch_live_quotes_for_targets,
     initialize_equal_weight_account,
@@ -218,9 +224,37 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run the first-round portfolio parameter grid search and exit.",
     )
     parser.add_argument(
+        "--walk-forward-only",
+        action="store_true",
+        help="Run walk-forward validation and exit.",
+    )
+    parser.add_argument(
         "--grid-search-output-dir",
         default="reports/multifactor_v2_grid_search",
         help="Directory for grid search outputs.",
+    )
+    parser.add_argument(
+        "--walk-forward-output-dir",
+        default="reports/multifactor_v2_walk_forward",
+        help="Directory for walk-forward outputs.",
+    )
+    parser.add_argument(
+        "--walk-forward-train-months",
+        type=int,
+        default=24,
+        help="Training window length in months for walk-forward validation.",
+    )
+    parser.add_argument(
+        "--walk-forward-test-months",
+        type=int,
+        default=3,
+        help="Test window length in months for walk-forward validation.",
+    )
+    parser.add_argument(
+        "--walk-forward-step-months",
+        type=int,
+        default=3,
+        help="Rolling step length in months for walk-forward validation.",
     )
     parser.add_argument(
         "--grid-top-n-values",
@@ -257,6 +291,12 @@ def main() -> int:
         parser.error("--rebalance-interval-trade-days must be > 0")
     if args.diagnostic_horizon_trade_days is not None and args.diagnostic_horizon_trade_days <= 0:
         parser.error("--diagnostic-horizon-trade-days must be > 0")
+    if args.walk_forward_train_months <= 0:
+        parser.error("--walk-forward-train-months must be > 0")
+    if args.walk_forward_test_months <= 0:
+        parser.error("--walk-forward-test-months must be > 0")
+    if args.walk_forward_step_months <= 0:
+        parser.error("--walk-forward-step-months must be > 0")
     excluded_factors = tuple(
         item.strip()
         for item in args.exclude_factors.split(",")
@@ -356,6 +396,36 @@ def main() -> int:
                     f"max_drawdown={best.metrics.max_drawdown:.2%}, "
                     f"avg_turnover={best.metrics.avg_turnover:.4f}, "
                     f"score={best.metrics.score:.4f}"
+                )
+            return 0
+        if args.walk_forward_only:
+            report = run_walk_forward(
+                provider=provider,
+                base_config=config,
+                start_date=start_date,
+                end_date=end_date,
+                train_months=args.walk_forward_train_months,
+                test_months=args.walk_forward_test_months,
+                step_months=args.walk_forward_step_months,
+                top_n_values=parse_int_list(args.grid_top_n_values),
+                buffer_rank_values=parse_int_list(args.grid_buffer_rank_values),
+                rebalance_interval_values=parse_int_list(args.grid_rebalance_interval_values),
+                min_holding_trade_day_values=parse_int_list(args.grid_min_holding_trade_day_values),
+                max_new_position_values=parse_int_list(args.grid_max_new_position_values),
+            )
+            json_path, md_path = write_walk_forward_outputs(
+                report,
+                Path(args.walk_forward_output_dir),
+            )
+            print(f"Generated walk-forward report: {md_path}")
+            print(f"Generated walk-forward data:   {json_path}")
+            if report.windows:
+                print(
+                    "Aggregate out-of-sample: "
+                    f"return={report.aggregate_test_metrics.total_return:.2%}, "
+                    f"max_drawdown={report.aggregate_test_metrics.max_drawdown:.2%}, "
+                    f"avg_turnover={report.aggregate_test_metrics.avg_turnover:.4f}, "
+                    f"score={report.aggregate_test_metrics.score:.4f}"
                 )
             return 0
         if args.segment_trade_days:

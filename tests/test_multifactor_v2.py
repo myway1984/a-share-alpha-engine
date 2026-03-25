@@ -27,11 +27,16 @@ from qstrategy_v2.models import (
 )
 from qstrategy_v2.optimizer import (
     GridSearchCandidate,
+    GridSearchMetrics,
+    WalkForwardWindowResult,
+    add_months,
     compute_max_drawdown,
     compute_positive_month_ratio,
     is_valid_candidate,
     parse_int_list,
     run_grid_search,
+    run_walk_forward,
+    summarize_walk_forward_windows,
 )
 from qstrategy_v2.portfolio import PortfolioManager
 from qstrategy_v2.preprocessing import CrossSectionPreprocessor, winsorize_mad, zscore, zscore_by_board
@@ -848,3 +853,80 @@ def test_run_grid_search_returns_ranked_results() -> None:
 
     assert results
     assert results == sorted(results, key=lambda item: item.metrics.score, reverse=True)
+
+
+def test_add_months_handles_month_end() -> None:
+    assert add_months(date(2026, 1, 31), 1) == date(2026, 2, 28)
+    assert add_months(date(2026, 10, 31), 4) == date(2027, 2, 28)
+
+
+def test_summarize_walk_forward_windows_compounds_test_returns() -> None:
+    candidate = GridSearchCandidate(12, 20, 5, 10, 3)
+    metrics = summarize_walk_forward_windows(
+        [
+            WalkForwardWindowResult(
+                train_start=date(2026, 1, 1),
+                train_end=date(2026, 1, 31),
+                test_start=date(2026, 2, 1),
+                test_end=date(2026, 2, 28),
+                best_candidate=candidate,
+                train_metrics=GridSearchMetrics(1.0, 1.1, 0.1, 0.05, 0.02, 0.6, 0.0, 20),
+                test_metrics=GridSearchMetrics(1.0, 1.1, 0.1, 0.05, 0.02, 0.6, 0.0, 20),
+            ),
+            WalkForwardWindowResult(
+                train_start=date(2026, 2, 1),
+                train_end=date(2026, 2, 28),
+                test_start=date(2026, 3, 1),
+                test_end=date(2026, 3, 31),
+                best_candidate=candidate,
+                train_metrics=GridSearchMetrics(1.0, 1.05, 0.05, 0.03, 0.01, 0.5, 0.0, 20),
+                test_metrics=GridSearchMetrics(1.0, 0.95, -0.05, 0.04, 0.01, 0.4, 0.0, 20),
+            ),
+        ]
+    )
+
+    assert round(metrics.end_nav, 6) == 1.045
+    assert round(metrics.total_return, 6) == 0.045
+
+
+def test_run_walk_forward_returns_window_results() -> None:
+    dates = [
+        date(2026, 1, 1),
+        date(2026, 1, 15),
+        date(2026, 2, 1),
+        date(2026, 2, 15),
+        date(2026, 3, 1),
+        date(2026, 3, 15),
+    ]
+    snapshots_by_date = {}
+    for idx, trade_date in enumerate(dates):
+        snapshots_by_date[trade_date] = [
+            build_snapshot(code="A", name="A", trade_date=trade_date, pe_ttm=2.0, close_price=10.0 + idx * 0.3, amount=120.0),
+            build_snapshot(code="B", name="B", trade_date=trade_date, pe_ttm=4.0, close_price=10.0, amount=110.0),
+            build_snapshot(code="C", name="C", trade_date=trade_date, pe_ttm=8.0, close_price=10.0 - idx * 0.2, amount=100.0),
+        ]
+    config = MultiFactorConfig(
+        lookback_days=1,
+        top_n=1,
+        buffer_rank=6,
+        rebalance_interval_trade_days=1,
+        factor_directions={name: direction for name, direction in DEFAULT_FACTOR_DIRECTIONS.items()},
+        excluded_factors=tuple(name for name in DEFAULT_FACTOR_DIRECTIONS if name != "ep"),
+    )
+    report = run_walk_forward(
+        provider=FakeProvider(snapshots_by_date),
+        base_config=config,
+        start_date=date(2026, 1, 1),
+        end_date=date(2026, 3, 31),
+        train_months=1,
+        test_months=1,
+        step_months=1,
+        top_n_values=[1],
+        buffer_rank_values=[6],
+        rebalance_interval_values=[1],
+        min_holding_trade_day_values=[1],
+        max_new_position_values=[1],
+    )
+
+    assert len(report.windows) >= 1
+    assert report.aggregate_test_metrics.trade_days > 0

@@ -4,10 +4,12 @@ from dataclasses import asdict
 from dataclasses import dataclass
 from dataclasses import replace
 from datetime import date
+from datetime import timedelta
 from pathlib import Path
 from collections import deque
 from itertools import product
 import json
+import calendar
 
 from .backtest import CrossSectionalBacktester
 from .config import MultiFactorConfig
@@ -39,6 +41,28 @@ class GridSearchMetrics:
 class GridSearchResult:
     candidate: GridSearchCandidate
     metrics: GridSearchMetrics
+
+
+@dataclass(slots=True)
+class WalkForwardWindowResult:
+    train_start: date
+    train_end: date
+    test_start: date
+    test_end: date
+    best_candidate: GridSearchCandidate
+    train_metrics: GridSearchMetrics
+    test_metrics: GridSearchMetrics
+
+
+@dataclass(slots=True)
+class WalkForwardReport:
+    start_date: date
+    end_date: date
+    train_months: int
+    test_months: int
+    step_months: int
+    windows: list[WalkForwardWindowResult]
+    aggregate_test_metrics: GridSearchMetrics
 
 
 @dataclass(slots=True)
@@ -299,6 +323,14 @@ def compute_positive_month_ratio(result: BacktestResult) -> float:
     return positive_months / len(monthly_navs)
 
 
+def add_months(value: date, months: int) -> date:
+    month_index = value.month - 1 + months
+    year = value.year + month_index // 12
+    month = month_index % 12 + 1
+    day = min(value.day, calendar.monthrange(year, month)[1])
+    return date(year, month, day)
+
+
 def transaction_cost(nav: float, orders, config: MultiFactorConfig) -> float:
     buy_turnover = sum(
         max(order.to_weight - order.from_weight, 0.0)
@@ -343,6 +375,225 @@ def write_grid_search_outputs(
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     md_path.write_text(render_grid_search_markdown(results), encoding="utf-8")
     return json_path, md_path
+
+
+def run_walk_forward(
+    provider,
+    base_config: MultiFactorConfig,
+    start_date: date,
+    end_date: date,
+    train_months: int,
+    test_months: int,
+    step_months: int,
+    top_n_values: list[int],
+    buffer_rank_values: list[int],
+    rebalance_interval_values: list[int],
+    min_holding_trade_day_values: list[int],
+    max_new_position_values: list[int],
+) -> WalkForwardReport:
+    if train_months <= 0 or test_months <= 0 or step_months <= 0:
+        raise ValueError("train_months, test_months, and step_months must be > 0")
+
+    windows: list[WalkForwardWindowResult] = []
+    cursor = start_date
+
+    while True:
+        train_start = cursor
+        train_end = add_months(train_start, train_months) - timedelta(days=1)
+        test_start = train_end + timedelta(days=1)
+        test_end = add_months(test_start, test_months) - timedelta(days=1)
+        if test_end > end_date:
+            break
+
+        train_results = run_grid_search(
+            provider=provider,
+            base_config=base_config,
+            start_date=train_start,
+            end_date=train_end,
+            top_n_values=top_n_values,
+            buffer_rank_values=buffer_rank_values,
+            rebalance_interval_values=rebalance_interval_values,
+            min_holding_trade_day_values=min_holding_trade_day_values,
+            max_new_position_values=max_new_position_values,
+        )
+        if not train_results:
+            cursor = add_months(cursor, step_months)
+            continue
+
+        best = train_results[0]
+        prepared_days, initial_previous_closes = prepare_grid_search_inputs(
+            provider=provider,
+            base_config=base_config,
+            start_date=test_start,
+            end_date=test_end,
+        )
+        test_result = simulate_candidate(
+            candidate=best.candidate,
+            base_config=base_config,
+            prepared_days=prepared_days,
+            initial_previous_closes=initial_previous_closes,
+        )
+        windows.append(
+            WalkForwardWindowResult(
+                train_start=train_start,
+                train_end=train_end,
+                test_start=test_start,
+                test_end=test_end,
+                best_candidate=best.candidate,
+                train_metrics=best.metrics,
+                test_metrics=summarize_backtest(test_result),
+            )
+        )
+        cursor = add_months(cursor, step_months)
+
+    return WalkForwardReport(
+        start_date=start_date,
+        end_date=end_date,
+        train_months=train_months,
+        test_months=test_months,
+        step_months=step_months,
+        windows=windows,
+        aggregate_test_metrics=summarize_walk_forward_windows(windows),
+    )
+
+
+def summarize_walk_forward_windows(windows: list[WalkForwardWindowResult]) -> GridSearchMetrics:
+    if not windows:
+        return GridSearchMetrics(
+            start_nav=0.0,
+            end_nav=0.0,
+            total_return=0.0,
+            max_drawdown=0.0,
+            avg_turnover=0.0,
+            positive_month_ratio=0.0,
+            score=float("-inf"),
+            trade_days=0,
+        )
+    nav_path = [1.0]
+    current_nav = 1.0
+    for window in windows:
+        current_nav *= 1.0 + window.test_metrics.total_return
+        nav_path.append(current_nav)
+    start_nav = nav_path[0]
+    end_nav = nav_path[-1]
+    total_return = end_nav / start_nav - 1.0 if start_nav else 0.0
+    avg_turnover = sum(window.test_metrics.avg_turnover for window in windows) / len(windows)
+    positive_month_ratio = (
+        sum(window.test_metrics.positive_month_ratio for window in windows) / len(windows)
+    )
+    max_drawdown = compute_max_drawdown(nav_path)
+    score = (
+        total_return * 0.4
+        - max_drawdown * 0.3
+        - avg_turnover * 0.15
+        + positive_month_ratio * 0.15
+    )
+    return GridSearchMetrics(
+        start_nav=start_nav,
+        end_nav=end_nav,
+        total_return=total_return,
+        max_drawdown=max_drawdown,
+        avg_turnover=avg_turnover,
+        positive_month_ratio=positive_month_ratio,
+        score=score,
+        trade_days=sum(window.test_metrics.trade_days for window in windows),
+    )
+
+
+def write_walk_forward_outputs(
+    report: WalkForwardReport,
+    output_dir: Path,
+) -> tuple[Path, Path]:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = output_dir / "latest_walk_forward.json"
+    md_path = output_dir / "latest_walk_forward.md"
+    payload = {
+        "start_date": report.start_date.isoformat(),
+        "end_date": report.end_date.isoformat(),
+        "train_months": report.train_months,
+        "test_months": report.test_months,
+        "step_months": report.step_months,
+        "aggregate_test_metrics": {
+            "start_nav": round(report.aggregate_test_metrics.start_nav, 4),
+            "end_nav": round(report.aggregate_test_metrics.end_nav, 4),
+            "total_return": round(report.aggregate_test_metrics.total_return, 6),
+            "max_drawdown": round(report.aggregate_test_metrics.max_drawdown, 6),
+            "avg_turnover": round(report.aggregate_test_metrics.avg_turnover, 6),
+            "positive_month_ratio": round(report.aggregate_test_metrics.positive_month_ratio, 6),
+            "score": round(report.aggregate_test_metrics.score, 6),
+            "trade_days": report.aggregate_test_metrics.trade_days,
+        },
+        "windows": [
+            {
+                "train_start": item.train_start.isoformat(),
+                "train_end": item.train_end.isoformat(),
+                "test_start": item.test_start.isoformat(),
+                "test_end": item.test_end.isoformat(),
+                "best_candidate": asdict(item.best_candidate),
+                "train_metrics": {
+                    "total_return": round(item.train_metrics.total_return, 6),
+                    "max_drawdown": round(item.train_metrics.max_drawdown, 6),
+                    "avg_turnover": round(item.train_metrics.avg_turnover, 6),
+                    "positive_month_ratio": round(item.train_metrics.positive_month_ratio, 6),
+                    "score": round(item.train_metrics.score, 6),
+                    "trade_days": item.train_metrics.trade_days,
+                },
+                "test_metrics": {
+                    "total_return": round(item.test_metrics.total_return, 6),
+                    "max_drawdown": round(item.test_metrics.max_drawdown, 6),
+                    "avg_turnover": round(item.test_metrics.avg_turnover, 6),
+                    "positive_month_ratio": round(item.test_metrics.positive_month_ratio, 6),
+                    "score": round(item.test_metrics.score, 6),
+                    "trade_days": item.test_metrics.trade_days,
+                },
+            }
+            for item in report.windows
+        ],
+    }
+    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    md_path.write_text(render_walk_forward_markdown(report), encoding="utf-8")
+    return json_path, md_path
+
+
+def render_walk_forward_markdown(report: WalkForwardReport) -> str:
+    lines = ["# Walk-Forward 验证摘要", ""]
+    lines.append(
+        f"- 区间：`{report.start_date.isoformat()}` ~ `{report.end_date.isoformat()}` | "
+        f"训练窗口：`{report.train_months}` 个月 | 测试窗口：`{report.test_months}` 个月 | "
+        f"滚动步长：`{report.step_months}` 个月 | 窗口数：`{len(report.windows)}`"
+    )
+    lines.append(
+        f"- 样本外汇总：收益 `{report.aggregate_test_metrics.total_return:.2%}` | "
+        f"最大回撤 `{report.aggregate_test_metrics.max_drawdown:.2%}` | "
+        f"平均日换手 `{report.aggregate_test_metrics.avg_turnover:.4f}` | "
+        f"月度正收益占比 `{report.aggregate_test_metrics.positive_month_ratio:.2%}` | "
+        f"综合分 `{report.aggregate_test_metrics.score:.4f}`"
+    )
+    lines.append("")
+    lines.append("## 各窗口结果")
+    lines.append("")
+    for index, item in enumerate(report.windows, start=1):
+        lines.append(
+            f"{index}. 训练 `{item.train_start.isoformat()}` ~ `{item.train_end.isoformat()}` | "
+            f"测试 `{item.test_start.isoformat()}` ~ `{item.test_end.isoformat()}`"
+        )
+        lines.append(
+            f"   最优参数：`top_n={item.best_candidate.top_n}` / "
+            f"`buffer_rank={item.best_candidate.buffer_rank}` / "
+            f"`rebalance={item.best_candidate.rebalance_interval_trade_days}` / "
+            f"`min_hold={item.best_candidate.min_holding_trade_days}` / "
+            f"`max_new={item.best_candidate.max_new_positions_per_rebalance}`"
+        )
+        lines.append(
+            f"   样本内：收益 `{item.train_metrics.total_return:.2%}` | 回撤 `{item.train_metrics.max_drawdown:.2%}` | "
+            f"换手 `{item.train_metrics.avg_turnover:.4f}` | 分数 `{item.train_metrics.score:.4f}`"
+        )
+        lines.append(
+            f"   样本外：收益 `{item.test_metrics.total_return:.2%}` | 回撤 `{item.test_metrics.max_drawdown:.2%}` | "
+            f"换手 `{item.test_metrics.avg_turnover:.4f}` | 分数 `{item.test_metrics.score:.4f}`"
+        )
+    lines.append("")
+    return "\n".join(lines) + "\n"
 
 
 def render_grid_search_markdown(results: list[GridSearchResult]) -> str:
